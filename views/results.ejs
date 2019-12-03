@@ -221,15 +221,16 @@ body {
 </div>
 
 <div class="sidenav">
+  <h2 id="nam"><i><u> <%=  name%></u></h2>
   <a href="/home">Predict</a>
   <a href="/profile">Profile</a>
-  <a href="">History</a>
+  <a href="/history">History</a>
   <!-- <a href="/analysis">Analysis</a> -->
 
 </div>
 <div class="main12">
 <div class="form-style-2">
-<div class="form-style-2-heading">Result: <%= ans%></div>
+<div class="form-style-2-heading"><h2>Result: <%= ans%></h2></div>
 
 <form action="/home">
     <input type="submit" value="Predict Again" />
