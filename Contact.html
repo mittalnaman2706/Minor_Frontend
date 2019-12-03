@@ -2,14 +2,18 @@
 
 <!DOCTYPE html>
 <html>
+<title>Contact us</title>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {margin: 0;}
 
 ul.topnav {
+  /*opacity: 0.1;*/
   list-style-type: none;
   margin: 0;
+  font-size: 20px;  
   padding: 0;
   overflow: hidden;
   background-color: #333;
@@ -27,75 +31,138 @@ ul.topnav li a {
 
 ul.topnav li a:hover:not(.active) {background-color: #111;}
 
-ul.topnav li a.active {background-color: #232899;}
-
+ul.topnav li a.active {
+    /*font-color :white;*/
+    font-color :red;
+    font-size :20px; 
+    background-color: #232899;
+}
 ul.topnav li.right {float: right;}
-
-.im {
-  text-align: center;
-  margin-left: 500px;
-  padding-top: 20px;
-  padding-bottom: 5px;
-  margin-right: 500px;
-  background: white;
-}
-
-#cont {
-  /*opacity: 0.5;*/
-  color:red;
-}
 
 @media screen and (max-width: 600px) {
   ul.topnav li.right, 
   ul.topnav li {float: none;}
 }
+
 body {
-  background: url("images/img.jpg");
+  background-position: center;
   background-repeat: no-repeat;
-  color: Black ;
-  background-size: cover;
   height : 100%;
   width : 100%;
 }
 
+.fly-in-text {
+list-style: none;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translateX(-50%) translateY(-50%);
+}
+.fly-in-text li{
+display: inline-block;
+color: black;
+margin-right: 40px;
+font-family: Open Sans,Arial;
+font-weight: 300;
+font-size: 4em;
+opacity: 1;
+transition: all 2.5s ease;
+}
+.fly-in-text li:last {
+margin-right: 0;
+}
+.fly-in-text.hidden li:last-child{
+opacity: 0;
+}
+.fly-in-text.hidden li:nth-child(1) { transform: translateX(-200px) translateY(-200px);}
+.fly-in-text.hidden li:nth-child(2) { transform: translateX(200px) translateY(60px);}
+.fly-in-text.hidden li:nth-child(3) { transform: translateX(300px) translateY(-400px);}
+.fly-in-text.hidden li:nth-child(4) { transform: translateX(400px) translateY(-500px);}
+.fly-in-text.hidden li:nth-child(5) { transform: translateX(-340px) translateY(200px);}
+.fly-in-text.hidden li:nth-child(6) { transform: translateX(-240px) translateY(230px);}
+.fly-in-text.hidden li:nth-child(7) { transform: translateX(-210px) translateY(-290px);}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
 </style>
 </head>
+<script type="text/javascript">
+  function myfunc(){
+    alert("Message sent successfully!");
+  }
+</script>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <ul class="topnav">
-  <li><a class="active" href="/">Home</a></li>
-  <li><a href="#news">News</a></li>
+    <li><a class="active" style="font-size: 22px;"><b>HeartX</b></a></li>
+  <li><a href="/analysis">Analysis</a></li>
   <li><a href="/contact">Contact</a></li>
-  <li><a href="/about">About</a></li>
+  <!-- <li><a href="about">About</a></li> -->
+
    
   <li class="right"><a href="/sign-up">Signup</a></li>
   <li class="right"><a href="/login">Login</a></li>
 
 </ul>
 
-<div style="padding:0 16px;">
-  
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form action="/message" method="POST" onsubmit="myfunc()">
+    <label for="fname">Name</label>
+    <input type="text" id="fname" name="name" placeholder="Name" required>
+
+    <label for="email">E-Mail</label>
+    <input type="text" id="email" name="email" placeholder="john@xyz.com" required>
+
+    <label for="subject">Message</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
 </div>
-<center>
-  <div class="im">
-<div id="cont">
-<h2>
-Phone
-</h2>
-<center>
-<h2>
-+91-9877452613
-</h2>
-<h2>
-Email
-</h2>
-<center>
-<h2>
-namanmittal040@gmail.com
-</h2>
-</center>
-</center>
-</div>
-</div>
+
+
 </body>
 </html>
-
+<!-- 
+.img {
+  background: url("images/img.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  /*background-size: cover;*/
+  height : 100%;
+  width : 100%;
+}
+ -->

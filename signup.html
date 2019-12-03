@@ -12,6 +12,7 @@ $(function () {
             var confirmPassword = $("#confirm_password").val();
             if (password != confirmPassword) {
                 alert("Passwords do not match.");
+                document.getElementById("password").focus();
                 return false;
             }
             return true;
@@ -22,7 +23,7 @@ $(function () {
 <!DOCTYPE html>
 <html>
 <title>
-  Doctor Sign-up
+  User Sign-up
 </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial scale = 1.0">
@@ -98,18 +99,11 @@ button:hover {
 <body>  
 
 <ul class="topnav">
-  <li>
-    <a class="active" href="/">Paynum</a>
-  </li>
-  <li>
-    <a href="#news">News</a>
-  </li>
-  <li>
-    <a href="/contact">Contact</a>
-  </li>
-  <li>
-    <a href="/about">About</a>
-  </li>
+
+    <li><a class="active" style="font-size: 22px;"><b>HeartX</b></a></li>
+  <li><a href="/analysis">Analysis</a></li>
+  <li><a href="/contact">Contact</a></li>
+
    
   <li class="right">
     <a href="/sign-up">Signup</a>
@@ -122,7 +116,7 @@ button:hover {
 <div id="qwe">
 <form action="/controllers/register-controller" method="POST">  
 <table border="1" cellpadding="4" cellspacing="1">
-  <u> <i> <h1>Doctor's Sign-up</h1></i></u>
+  <u> <i> <h1>User Sign-up</h1></i></u>
   <div id="tble">
     <tr><td>
     Name: 
@@ -156,14 +150,13 @@ button:hover {
         <td>
             Password:
         </td><td>
-            <input name="password" minlength="8" id="password" placeholder="********" type="password" autocomplete="off" readonly 
-    onfocus="this.removeAttribute('readonly');" required>
+            <input name="password" minlength="8" id="password" placeholder="********" type="password" autocomplete="off" required>
         </td></tr>
     <tr><td>
             Confirm Password:
         </td><td>
             <input type="password" placeholder="********" name="confirm_password" id="confirm_password" autocomplete="off" readonly 
-    onfocus="this.removeAttribute('readonly');" >
+    onfocus="this.removeAttribute('readonly');" required>
         </td>
     </tr>
   

@@ -1,113 +1,280 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <!DOCTYPE html>
 <html>
-<script type="text/javascript">
-    function updateTextInput(val) {
-          document.getElementById('textInput').value=val; 
-        }
-</script>
 <head>
-	<title>Heart Disease Presence Prediction System</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
+<title>
+  Home
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    #q{
-        max-width: 400px;
-    }
+body {margin: 0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*z-index: 4;*/
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {
+  font-color :white;
+  font-size :20px;
+  background-color: #000000;
+}
+
+ul.topnav li.right {
+  font-color : white;
+  font-size : 20px;
+  background-color : #000000;
+  float: right;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+body {
+  /*background: url("images/dashboard.jpg");*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  height : 100%;
+  width : 100%;
+  font-family: "Lato", sans-serif;
+}
+
+.bg {
+  background: url("images/dashboard.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height : 100%;
+  opacity: 0.5;
+  width : 100%;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  /*z-index: 1;*/
+  top: 51;
+  color: white;
+  left: 0;
+  background-color: #3081C8;
+  overflow-x: hidden;
+  padding-top: 13px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #FFFFFF;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main12 {
+	padding-top: 60px;
+  margin-left: 200px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 14px;}
+  .sidenav a {font-size: 18px;}
+}
+#nam {
+    text-align: center;
+}
 </style>
+<style type="text/css">
+.form-style-2{
+	max-width: 500px;
+	padding: 20px 12px 10px 20px;
+	font: 13px Arial, Helvetica, sans-serif;
+}
+.form-style-2-heading{
+	font-weight: bold;
+	font-style: italic;
+	border-bottom: 2px solid #ddd;
+	margin-bottom: 20px;
+	font-size: 15px;
+	padding-bottom: 3px;
+}
+.form-style-2 label{
+	display: block;
+	margin: 0px 0px 15px 0px;
+}
+.form-style-2 label > span{
+	width: 100px;
+	font-weight: bold;
+	float: left;
+	padding-top: 8px;
+	padding-right: 5px;
+}
+.form-style-2 span.required{
+	color:red;
+}
+.form-style-2 .tel-number-field{
+	width: 40px;
+	text-align: center;
+}
+.form-style-2 input.input-field, .form-style-2 .select-field{
+	width: 48%;	
+}
+.form-style-2 input.input-field, 
+.form-style-2 .tel-number-field, 
+.form-style-2 .textarea-field, 
+ .form-style-2 .select-field{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border: 1px solid #C2C2C2;
+	box-shadow: 1px 1px 4px #EBEBEB;
+	-moz-box-shadow: 1px 1px 4px #EBEBEB;
+	-webkit-box-shadow: 1px 1px 4px #EBEBEB;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 7px;
+	outline: none;
+}
+.form-style-2 .input-field:focus, 
+.form-style-2 .tel-number-field:focus, 
+.form-style-2 .textarea-field:focus,  
+.form-style-2 .select-field:focus{
+	border: 1px solid #0C0;
+}
+.form-style-2 .textarea-field{
+	height:100px;
+	width: 55%;
+}
+.form-style-2 input[type=submit],
+.form-style-2 input[type=button]{
+	border: none;
+	padding: 8px 15px 8px 15px;
+	background: #FF8500;
+	color: #fff;
+	box-shadow: 1px 1px 4px #DADADA;
+	-moz-box-shadow: 1px 1px 4px #DADADA;
+	-webkit-box-shadow: 1px 1px 4px #DADADA;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+.form-style-2 input[type=submit]:hover,
+.form-style-2 input[type=button]:hover{
+	background: #EA7B00;
+	color: #fff;
+}
+</style>
+</head>
+
 <body>
-	<div class="showcase container purple lighten-3">
-    <div class="row">
-        <div class="col 12 m10 offset-ml center">
-            <h2>Heart Disease Presence Prediction System</h2>
-            <p>Web App</p>
-            <a href="/" class="btn btn-small purple white-text waves-effect waves-dark">Reset</a>
-        </div>
+<div class="navbar">
+<ul class="topnav">
 
-    </div>
+    <li><a class="active" style="font-color :white;"><i><b>HeartX</b></i></a></li>     
+    <li class="right"><a href="/logout">Logout</a></li>
+  </ul>
 </div>
 
-	<section class="section">
-    <div class="container">
-      <div class="row">
-             <div class="col s12">
-              <div class="card-panel grey lighten-4 grey-text text-darken-4 z-depth-0" id="q">
-                <form method="POST" action="/predict">
-						
-                        <label for="age">Age</label>
-                        <input type="number"  step=".01" name="age" min="0" max="1"/>
-                        <!-- <input type="range" value="0" name="age" step=".01" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="age" value="0"><hr> -->
+<div class="sidenav">
+  <h2 id="nam"><i><u> <%=  name%></u></h2>
+  <a href="/home">Predict</a>
+  <a href="/profile">Profile</a>
+  <a href="">History</a>
+  <!-- <a href="/analysis">Analysis</a> -->
 
-                        <label for="gender">Gender</label>
-                        <!-- <input type="range" value="0" name="sex" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="sex" value="0"><hr> -->
-                        <input type="number" id="sex" value="0" name="sex" min="0" max="1"/>
-
-                        <label for="cp">cp</label>
-                        <!-- <input type="range" value="0" name="cp" step=".01" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="textInput" value="0"><hr> -->
-                        <input type="number" id="cp" step=".01" min="0" max="1" name="cp"/>
-
-                        <label>trestbps</label>
-                        <!-- <input type="range" value="0" name="trestbps" step=".01" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="textInput" value="0"><hr> -->
-                        <input type="number" step=".01" min="0" max="1" name="trestbps" value="trestbps"/>
-
-                        <label>chol</label>
-                        <!-- <input type="range" value="0" name="chol" step=".01" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="textInput" value="0"><hr> -->
-                        <input type="number" step=".01" min="0" max="1" name="chol" value="chol"/>
-
-                        <label>fbs</label>
-                        <!-- <input type="range" value="0" name="fbs" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="textInput" value="0"><hr> -->
-                        <input type="number" min="0" max="1" name="fbs"/>
-
-                        <label>restecg</label>
-                        <!-- <input type="range" value="0" name="restecg" step=".01" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="textInput" value="0"><hr> -->
-                        <input type="number" step=".01" min="0" max="1" name="restecg">
-
-                        <label>thalach</label>
-                        <!-- <input type="range" value="0" name="thalach" step=".01" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="textInput" value="0"><hr> -->
-                        <input type="number" step=".01" min="0" max="1" name="thalach"/>
-
-                        <label>exang</label>
-                        <!-- <input type="range" value="0" name="exang" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="textInput" value="0"><hr> -->
-                        <input type="number" min="0" max="1" name="exang"/>
-						
-						 <label>oldpeak</label>
-                        <!-- <input type="range" value="0" name="oldpeak" step=".01" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="textInput" value="0"><hr> -->
-                        <input type="number" step=".01" min="0" max="1" name="oldpeak"/>
-
-                        <label>slope</label>
-                        <!-- <input type="range" value="0" name="slope" step=".01" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="textInput" value="0"><hr> -->
-                        <input type="number" step=".01" min="0" max="1" name="slope"/>
-
-                        <label>ca</label>
-                        <!-- <input type="range" value="0" name="ca" step=".01" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="textInput" value="0"><hr> -->
-                        <input type="number" step=".01" min="0" max="1" name="ca"/>
-
-                        <label>thal</label>
-                        <!-- <input type="range" value="0" name="thal" step=".01" min="0" max="1" onchange="updateTextInput(this.value);"> -->
-                        <!-- <input type="text" id="textInput" value="0"><hr> -->
-                        <input type="number" step=".01" min="0" max="1" name="thal"/>
-
-				<input type="submit" value="Predict" class="btn btn-small purple waves-effect waves-light btn-extend">
-                  <input type="reset" value="Clear" class="btn btn-small white waves-effect waves-light btn-extend">
-			</form>
-   			 </div>
-        </div>
-    </div>
 </div>
-  </section>
+<div class="main12">
+<div class="form-style-2">
+<div class="form-style-2-heading">Provide the values of following attributes</div>
+<form action="/predict" method="post">
 
+<label for="age"><span>Age <span class="required"></span></span></label>
+<input type="number" class="input-field" step=".01" value="0" name="age" min="0" max="1"/>
+<!-- <br><br> -->
+<label for="gender"><span>Gender<span class="required"></span></span></label>
+<input type="number" class="input-field" id="sex" value="0" name="sex" min="0" max="1"/>
+
+<label for="cp"><span>Chest Pain type <span class="required"></span></span></label>
+<input type="number" class="input-field" id="cp" step=".01" min="0" max="1" value="0" name="cp"/>
+
+<label><span>Resting blood Pressure <span class="required"></span></span></label>
+<input type="number" class="input-field" step=".01" min="0" max="1" name="trestbps" value="0" />
+
+<label><span>Serum cholestrol in mg/dl <span class="required"></span></span></label>
+<input type="number" class="input-field" step=".01" min="0" max="1" name="chol" value="0"/>
+<br><br>
+<label><span>Fasting Blood Sugar <span class="required"></span></span></label>
+<input type="number" class="input-field" min="0" max="1" name="fbs" value="0" />
+
+<label><span>Resting ECG Results <span class="required"></span></span></label>
+<input type="number" class="input-field" step=".01" min="0" max="1" value="0" name="restecg">
+
+<label><span>Maximum heart rate achieved <span class="required"></span></span></label>
+<input type="number" class="input-field" step=".01" min="0" max="1" value="0" name="thalach"/>
+
+<label><span>Excercise induced anigna <span class="required"></span></span></label>
+<input type="number" class="input-field" value="0" min="0" max="1" name="exang"/>
+            
+<label><span>ST Depression induced by excercie <span class="required"></span></span></label>
+<input type="number" class="input-field" step=".01" min="0" max="1" value="0" name="oldpeak"/>
+<br><br>
+<label><span>Slope of excercise ST <span class="required"></span></span></label>
+<input type="number" step=".01" min="0" max="1" class="input-field" value="0" name="slope"/>
+
+<label><span>Number of major vessels <span class="required"></span></span></label>
+<input type="number" class="input-field" step=".01" min="0" max="1" value="0" name="ca"/>
+
+<label><span>Thalium stress test result <span class="required"></span></span></label>
+<input type="number" class="input-field" step=".01" min="0" max="1" value="0" name="thal"/>
+<br><br>
+<label><span> </span><input type="submit" value="Submit" /></label>
+</form>
+</div>
+   
 </body>
-</html>
+</html> 
